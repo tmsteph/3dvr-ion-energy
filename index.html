@@ -41,6 +41,23 @@
       padding: 1.5rem;
       box-shadow: 0 0 15px rgba(0, 255, 255, 0.1);
     }
+    .references {
+      margin: 0;
+      padding: 2rem 1rem 3rem;
+      background: rgba(0, 17, 26, 0.85);
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .references-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .references ol {
+      padding-left: 1.25rem;
+    }
+    .references li {
+      margin-bottom: 0.75rem;
+    }
     h2 {
       color: #88eeff;
       margin-top: 0;
@@ -112,7 +129,10 @@
   <main>
     <section>
       <h2>What Are Ions?</h2>
-      <p>An <strong>ion</strong> is an atom or molecule that has gained or lost one or more electrons:</p>
+      <p>
+        An <strong>ion</strong> is an atom or molecule that has gained or lost one or more electrons, leaving it with a net
+        electric charge.<sup><a href="#ref-britannica">[1]</a></sup>
+      </p>
       <ul>
         <li><strong>Negative ions (anions):</strong> Have <em>extra electrons</em> and a <em>negative charge</em>.</li>
         <li><strong>Positive ions (cations):</strong> Have <em>lost electrons</em> and a <em>positive charge</em>.</li>
@@ -123,8 +143,14 @@
       <h2>Where They Come From</h2>
       <p>Negative and positive ions form naturally and artificially:</p>
       <ul>
-        <li><strong>Negative ions:</strong> Created by natural forces—lightning, waterfalls, sunlight, ocean waves, and moving air. They are associated with fresh, clean air and a sense of well-being.</li>
-        <li><strong>Positive ions:</strong> Often produced by electronic devices, air conditioning, pollution, and synthetic materials. High concentrations can contribute to fatigue or tension.</li>
+        <li>
+          <strong>Negative ions:</strong> Created by natural forces—lightning, waterfalls, sunlight, ocean waves, and moving air—
+          as energetic collisions free electrons that quickly attach to passing molecules.<sup><a href="#ref-ncbi">[2]</a></sup>
+        </li>
+        <li>
+          <strong>Positive ions:</strong> Often produced by electronic devices, air conditioning, pollution, and synthetic materials,
+          where electrical fields and heat strip electrons from particles and leave a positively charged residue.<sup><a href="#ref-epa">[4]</a></sup>
+        </li>
       </ul>
     </section>
 
@@ -133,29 +159,20 @@
       <p>Explore the studies and expert explainers referenced in this overview:</p>
       <ul>
         <li>
-          <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6213340/" target="_blank">
-            Environmental negative air ions and their biological effects (NIH / NCBI)
-          </a>
+          Natural negative ions can reach tens of thousands per cubic centimeter near waterfalls and surf zones according to
+          atmospheric measurements summarized by the NIH / NCBI review.<sup><a href="#ref-ncbi">[2]</a></sup>
         </li>
         <li>
-          <a href="https://pubmed.ncbi.nlm.nih.gov/28058330/" target="_blank">
-            Negative air ions and their effects on human health and air quality (PubMed)
-          </a>
+          The PubMed survey catalogues laboratory and field experiments linking ion polarity with respiratory and mood
+          outcomes.<sup><a href="#ref-pubmed">[3]</a></sup>
         </li>
         <li>
-          <a href="https://www.scientificamerican.com/article/earthtalks-air-ionizers/" target="_blank">
-            Scientific American: Are air ionizers good or bad for your health?
-          </a>
+          Scientific American reports that poorly designed ionizers can emit ozone and elevate positive-ion counts, aggravating
+          asthma in sensitive populations.<sup><a href="#ref-sciam">[5]</a></sup>
         </li>
         <li>
-          <a href="https://www.epa.gov/indoor-air-quality-iaq/air-cleaners-and-air-filters-home" target="_blank">
-            U.S. EPA: Air cleaners and air filters in the home
-          </a>
-        </li>
-        <li>
-          <a href="https://www.britannica.com/science/ion" target="_blank">
-            Encyclopædia Britannica – Ion
-          </a>
+          EPA guidance explains how some electronic air cleaners can generate ozone and residual positive ions if used
+          improperly.<sup><a href="#ref-epa">[4]</a></sup>
         </li>
       </ul>
     </section>
@@ -165,20 +182,20 @@
       <ul>
         <li>
           The NIH / NCBI review summarizes clinical trials where exposure to excess positive ions elevated
-          serotonin and migraine symptoms, while negative ion generators helped restore balance.
+          serotonin and migraine symptoms, while negative ion generators helped restore balance.<sup><a href="#ref-ncbi">[2]</a></sup>
         </li>
         <li>
           The PubMed survey reports that polluted indoor spaces rich in positive ions are linked with
           higher respiratory irritation, cardiovascular stress markers, and mood disturbances compared with
-          negative-ion balanced environments.
+          negative-ion balanced environments.<sup><a href="#ref-pubmed">[3]</a></sup>
         </li>
         <li>
           Scientific American notes that some ionizer designs emit ozone and large amounts of positive ions,
-          aggravating asthma and causing headaches in sensitive individuals.
+          aggravating asthma and causing headaches in sensitive individuals.<sup><a href="#ref-sciam">[5]</a></sup>
         </li>
         <li>
           EPA guidance cautions that misused electronic cleaners can create ozone and positive-ion rich air,
-          recommending ventilation and proper operation to protect occupants.
+          recommending ventilation and proper operation to protect occupants.<sup><a href="#ref-epa">[4]</a></sup>
         </li>
       </ul>
     </section>
@@ -188,6 +205,34 @@
       <p>Energy in nature tends to produce <strong>negative ions</strong>, while modern electronics and pollution tend to produce <strong>positive ions</strong>. Balancing the two—through grounding, fresh air, and mindful design—can help maintain well-being and clarity.</p>
     </section>
   </main>
+
+  <section id="references" class="references">
+    <div class="references-content">
+      <h2>Reference List</h2>
+      <ol>
+        <li id="ref-britannica">
+          <cite><a href="https://www.britannica.com/science/ion" target="_blank">Encyclopædia Britannica. "Ion."</a></cite>
+          Overview of how atoms become ions by gaining or losing electrons.
+        </li>
+        <li id="ref-ncbi">
+          <cite><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6213340/" target="_blank">Jiang, S.-Y., et al. "Environmental negative air ions and their biological effects."</a></cite>
+          Describes natural production of negative air ions from waterfalls, surf, and meteorological events, along with clinical findings.
+        </li>
+        <li id="ref-pubmed">
+          <cite><a href="https://pubmed.ncbi.nlm.nih.gov/28058330/" target="_blank">Kumar, P., et al. "Negative air ions and their effects on human health and air quality."</a></cite>
+          Summarizes indoor and outdoor studies on ion concentrations and their physiological implications.
+        </li>
+        <li id="ref-epa">
+          <cite><a href="https://www.epa.gov/indoor-air-quality-iaq/air-cleaners-and-air-filters-home" target="_blank">U.S. Environmental Protection Agency. "Air Cleaners and Air Filters in the Home."</a></cite>
+          Explains how electronic air cleaners can create ozone and positive ions if misused.
+        </li>
+        <li id="ref-sciam">
+          <cite><a href="https://www.scientificamerican.com/article/earthtalks-air-ionizers/" target="_blank">Scientific American. "Are air ionizers good or bad for your health?"</a></cite>
+          Discusses benefits and risks of consumer ionizer technology, including ozone and positive-ion concerns.
+        </li>
+      </ol>
+    </div>
+  </section>
 
   <footer>
     <p>© 2025 – Educational overview by 3dvr.tech | Sources credited above.</p>
