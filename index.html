@@ -256,24 +256,38 @@
       return candidate;
     };
 
-    const layerRect = ionLayer.getBoundingClientRect();
-    const layerWidth = layerRect.width || window.innerWidth;
-    const layerHeight = layerRect.height || window.innerHeight;
+    const createIons = () => {
+      ionLayer.querySelectorAll('.ion').forEach((ion) => ion.remove());
 
-    const horizontalSafeRange = layerWidth > 900 ? [30, 70] : [20, 80];
-    const verticalSafeRange = layerHeight > 700 ? [30, 70] : [20, 80];
+      const layerRect = ionLayer.getBoundingClientRect();
+      const layerWidth = layerRect.width || window.innerWidth;
+      const layerHeight = layerRect.height || window.innerHeight;
 
-    for (let i = 0; i < numIons; i++) {
-      const ion = document.createElement('div');
-      ion.className = 'ion ' + (Math.random() > 0.5 ? 'negative' : 'positive');
-      ion.style.width = ion.style.height = Math.random() * 10 + 8 + 'px';
-      const leftPercent = getSafeCoordinate(...horizontalSafeRange);
-      const topPercent = getSafeCoordinate(...verticalSafeRange);
-      ion.style.left = (leftPercent / 100) * layerWidth + 'px';
-      ion.style.top = (topPercent / 100) * layerHeight + 'px';
-      ion.style.animationDuration = (6 + Math.random() * 6) + 's';
-      ionLayer.appendChild(ion);
-    }
+      const horizontalSafeRange = layerWidth > 900 ? [30, 70] : [20, 80];
+      const verticalSafeRange = layerHeight > 700 ? [30, 70] : [20, 80];
+
+      for (let i = 0; i < numIons; i++) {
+        const ion = document.createElement('div');
+        ion.className = 'ion ' + (Math.random() > 0.5 ? 'negative' : 'positive');
+        ion.style.width = ion.style.height = Math.random() * 10 + 8 + 'px';
+        const leftPercent = getSafeCoordinate(...horizontalSafeRange);
+        const topPercent = getSafeCoordinate(...verticalSafeRange);
+        ion.style.left = (leftPercent / 100) * layerWidth + 'px';
+        ion.style.top = (topPercent / 100) * layerHeight + 'px';
+        ion.style.animationDuration = (6 + Math.random() * 6) + 's';
+        ionLayer.appendChild(ion);
+      }
+    };
+
+    createIons();
+
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(() => {
+        createIons();
+      }, 150);
+    });
   </script>
 </body>
 </html>
