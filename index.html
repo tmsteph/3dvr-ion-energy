@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Negative vs Positive Ions – Energy & Electronics</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: system-ui, sans-serif;
+      background: radial-gradient(circle at center, #00111a 0%, #000 100%);
+      color: #f2f9ff;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    header {
+      text-align: center;
+      padding: 2rem;
+      background: rgba(255, 255, 255, 0.05);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    h1 {
+      font-size: 2rem;
+      color: #77ddff;
+      margin-bottom: 0.5rem;
+    }
+    main {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    section {
+      margin-bottom: 2rem;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 0 15px rgba(0, 255, 255, 0.1);
+    }
+    h2 {
+      color: #88eeff;
+      margin-top: 0;
+    }
+    ul {
+      padding-left: 1.5rem;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #aaa;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* Floating ion animation */
+    .ion {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.6;
+      animation: float 8s infinite ease-in-out;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); opacity: 0.6; }
+      50% { transform: translateY(-30px); opacity: 1; }
+      100% { transform: translateY(0); opacity: 0.6; }
+    }
+
+    .ion.negative {
+      background: rgba(0, 255, 255, 0.7);
+      box-shadow: 0 0 10px #0ff;
+    }
+
+    .ion.positive {
+      background: rgba(255, 100, 100, 0.7);
+      box-shadow: 0 0 10px #f55;
+    }
+
+    a {
+      color: #88eeff;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Negative vs Positive Ions</h1>
+    <p>Understanding the sources and effects of natural and electronic ion energy.</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>What Are Ions?</h2>
+      <p>An <strong>ion</strong> is an atom or molecule that has gained or lost one or more electrons:</p>
+      <ul>
+        <li><strong>Negative ions (anions):</strong> Have <em>extra electrons</em> and a <em>negative charge</em>.</li>
+        <li><strong>Positive ions (cations):</strong> Have <em>lost electrons</em> and a <em>positive charge</em>.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Where They Come From</h2>
+      <p>Negative and positive ions form naturally and artificially:</p>
+      <ul>
+        <li><strong>Negative ions:</strong> Created by natural forces—lightning, waterfalls, sunlight, ocean waves, and moving air. They are associated with fresh, clean air and a sense of well-being.</li>
+        <li><strong>Positive ions:</strong> Often produced by electronic devices, air conditioning, pollution, and synthetic materials. High concentrations can contribute to fatigue or tension.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Scientific & Reference Sources</h2>
+      <ul>
+        <li><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6213340/" target="_blank">Environmental negative air ions and their biological effects (NIH / NCBI)</a></li>
+        <li><a href="https://pubmed.ncbi.nlm.nih.gov/28058330/" target="_blank">Negative air ions and their effects on human health and air quality (PubMed)</a></li>
+        <li><a href="https://www.scientificamerican.com/article/earthtalks-air-ionizers/" target="_blank">Scientific American: Are air ionizers good or bad for your health?</a></li>
+        <li><a href="https://www.britannica.com/science/ion" target="_blank">Encyclopædia Britannica – Ion</a></li>
+        <li><a href="https://www.epa.gov/indoor-air-quality-iaq/air-cleaners-and-air-filters-home" target="_blank">U.S. EPA: Air cleaners and air filters in the home</a></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>In Simple Terms</h2>
+      <p>Energy in nature tends to produce <strong>negative ions</strong>, while modern electronics and pollution tend to produce <strong>positive ions</strong>. Balancing the two—through grounding, fresh air, and mindful design—can help maintain well-being and clarity.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 – Educational overview by 3dvr.tech | Sources credited above.</p>
+  </footer>
+
+  <script>
+    // Generate floating ion particles
+    const numIons = 20;
+    for (let i = 0; i < numIons; i++) {
+      const ion = document.createElement('div');
+      ion.className = 'ion ' + (Math.random() > 0.5 ? 'negative' : 'positive');
+      ion.style.width = ion.style.height = Math.random() * 10 + 8 + 'px';
+      ion.style.left = Math.random() * 100 + 'vw';
+      ion.style.top = Math.random() * 100 + 'vh';
+      ion.style.animationDuration = (6 + Math.random() * 6) + 's';
+      document.body.appendChild(ion);
+    }
+  </script>
+</body>
+</html>
