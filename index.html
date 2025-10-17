@@ -12,12 +12,15 @@
       color: #f2f9ff;
       line-height: 1.6;
       overflow-x: hidden;
+      position: relative;
     }
     header {
       text-align: center;
       padding: 2rem;
-      background: rgba(255, 255, 255, 0.05);
+      background: rgba(255, 255, 255, 0.08);
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      position: relative;
+      z-index: 1;
     }
     h1 {
       font-size: 2rem;
@@ -28,10 +31,12 @@
       max-width: 800px;
       margin: 2rem auto;
       padding: 0 1rem;
+      position: relative;
+      z-index: 1;
     }
     section {
       margin-bottom: 2rem;
-      background: rgba(255, 255, 255, 0.05);
+      background: rgba(0, 17, 26, 0.75);
       border-radius: 12px;
       padding: 1.5rem;
       box-shadow: 0 0 15px rgba(0, 255, 255, 0.1);
@@ -49,6 +54,18 @@
       font-size: 0.9rem;
       color: #aaa;
       border-top: 1px solid rgba(255, 255, 255, 0.1);
+      position: relative;
+      z-index: 1;
+    }
+
+    .ion-layer {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+      -webkit-mask-image: radial-gradient(circle at center, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 45%, rgba(0, 0, 0, 0.85) 65%, rgba(0, 0, 0, 1) 100%);
+      mask-image: radial-gradient(circle at center, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 45%, rgba(0, 0, 0, 0.85) 65%, rgba(0, 0, 0, 1) 100%);
     }
 
     /* Floating ion animation */
@@ -57,6 +74,7 @@
       border-radius: 50%;
       opacity: 0.6;
       animation: float 8s infinite ease-in-out;
+      pointer-events: none;
     }
 
     @keyframes float {
@@ -85,6 +103,7 @@
   </style>
 </head>
 <body>
+  <div class="ion-layer"></div>
   <header>
     <h1>Negative vs Positive Ions</h1>
     <p>Understanding the sources and effects of natural and electronic ion energy.</p>
@@ -175,16 +194,31 @@
   </footer>
 
   <script>
-    // Generate floating ion particles
+    // Generate floating ion particles around the edges of the viewport
+    const ionLayer = document.querySelector('.ion-layer') || document.body;
     const numIons = 20;
+
+    const getSafeCoordinate = (minSafe, maxSafe) => {
+      const candidate = Math.random() * 100;
+      if (candidate > minSafe && candidate < maxSafe) {
+        return Math.random() < 0.5
+          ? Math.random() * minSafe
+          : maxSafe + Math.random() * (100 - maxSafe);
+      }
+      return candidate;
+    };
+
+    const horizontalSafeRange = window.innerWidth > 900 ? [30, 70] : [20, 80];
+    const verticalSafeRange = window.innerHeight > 700 ? [30, 70] : [20, 80];
+
     for (let i = 0; i < numIons; i++) {
       const ion = document.createElement('div');
       ion.className = 'ion ' + (Math.random() > 0.5 ? 'negative' : 'positive');
       ion.style.width = ion.style.height = Math.random() * 10 + 8 + 'px';
-      ion.style.left = Math.random() * 100 + 'vw';
-      ion.style.top = Math.random() * 100 + 'vh';
+      ion.style.left = getSafeCoordinate(...horizontalSafeRange) + 'vw';
+      ion.style.top = getSafeCoordinate(...verticalSafeRange) + 'vh';
       ion.style.animationDuration = (6 + Math.random() * 6) + 's';
-      document.body.appendChild(ion);
+      ionLayer.appendChild(ion);
     }
   </script>
 </body>
