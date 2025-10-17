@@ -81,6 +81,9 @@
       pointer-events: none;
       z-index: 0;
       overflow: hidden;
+      width: 100vw;
+      height: 100vh;
+      height: 100dvh;
       -webkit-mask-image: radial-gradient(circle at center, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 45%, rgba(0, 0, 0, 0.85) 65%, rgba(0, 0, 0, 1) 100%);
       mask-image: radial-gradient(circle at center, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 45%, rgba(0, 0, 0, 0.85) 65%, rgba(0, 0, 0, 1) 100%);
     }
@@ -253,15 +256,21 @@
       return candidate;
     };
 
-    const horizontalSafeRange = window.innerWidth > 900 ? [30, 70] : [20, 80];
-    const verticalSafeRange = window.innerHeight > 700 ? [30, 70] : [20, 80];
+    const layerRect = ionLayer.getBoundingClientRect();
+    const layerWidth = layerRect.width || window.innerWidth;
+    const layerHeight = layerRect.height || window.innerHeight;
+
+    const horizontalSafeRange = layerWidth > 900 ? [30, 70] : [20, 80];
+    const verticalSafeRange = layerHeight > 700 ? [30, 70] : [20, 80];
 
     for (let i = 0; i < numIons; i++) {
       const ion = document.createElement('div');
       ion.className = 'ion ' + (Math.random() > 0.5 ? 'negative' : 'positive');
       ion.style.width = ion.style.height = Math.random() * 10 + 8 + 'px';
-      ion.style.left = getSafeCoordinate(...horizontalSafeRange) + 'vw';
-      ion.style.top = getSafeCoordinate(...verticalSafeRange) + 'vh';
+      const leftPercent = getSafeCoordinate(...horizontalSafeRange);
+      const topPercent = getSafeCoordinate(...verticalSafeRange);
+      ion.style.left = (leftPercent / 100) * layerWidth + 'px';
+      ion.style.top = (topPercent / 100) * layerHeight + 'px';
       ion.style.animationDuration = (6 + Math.random() * 6) + 's';
       ionLayer.appendChild(ion);
     }
