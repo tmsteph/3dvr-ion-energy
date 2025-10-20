@@ -37,6 +37,11 @@
    - Control: Introduce commercial positive ion generator to confirm instrument response (expect >10⁵ ions/cm³).
 4. **Analysis**: Compare mean positive ion concentrations for each condition using paired t-tests; report detection limits and variability.
 
+## Clarifying Related Phenomena
+- **Surface charging vs. air ion emission**: Electrostatic discharge testing of phone and tablet displays demonstrates that spark-less events primarily leave charge bound to the glass surface, which then couples capacitively into nearby circuits rather than dispersing as a cloud of free positive air ions.[6] The measurements were performed at stress levels up to 14 kV, far beyond normal operating voltages, yet still did not produce sustained ionized plumes.
+- **Environmental drivers of ion balance**: Indoor surveys consistently show that ventilation and meteorological factors such as relative humidity govern positive ion persistence, with dry air allowing charge accumulation and moist air accelerating recombination regardless of equipment status.[8] Practical mitigation therefore focuses on air exchange and humidity control instead of attributing ion build-up directly to low-voltage electronics.
+- **Photobiology vs. ion physics**: Reviews of blue-light exposure from digital screens conclude that while wavelengths between ~450–500 nm can suppress melatonin and contribute to oxidative stress pathways, domestic LED backlights operate far below thresholds associated with retinal toxicity.[7] These photobiological effects are distinct from ion generation and should be addressed with lighting management rather than assumptions about positive ion emission.
+
 ## Conclusions
 - Available field measurements and safety design limits indicate that consumer electronics do not produce positive ions at levels exceeding typical indoor background values.
 - Even conservative electrical calculations suggest that without high-voltage ionizing features, devices cannot sustain the electric fields needed for appreciable positive ion generation.
@@ -48,3 +53,6 @@
 3. Mainelis, G., et al. (2002). *Indoor air ion concentrations in urban and rural hospitals*. Indoor Air, 12(3), 171–179.
 4. International Electrotechnical Commission. (2014). *IEC 60950-1: Information technology equipment – Safety*.
 5. Castle, G. S. P. (1997). *Industrial applications of electrostatics: The past, present and future*. Journal of Electrostatics, 40–41, 13–20.
+6. Talebzadeh, A., Gan, Y., Kim, K.-H., Zhang, Y., & Pommerenke, D. (2015). *Spark-less electrostatic discharge (ESD) on display screens*. IEEE Symposium on Electromagnetic Compatibility and Signal Integrity, 57–62.
+7. Merle, B. M. J., et al. (2023). *Blue light exposure: ocular hazards and prevention—A narrative review*. Ophthalmology and Therapy, 12, 755–788.
+8. Robert, J. J., & Omotinugbon, O. D. (2023). *Indoor air ion concentration variability assessment*. Asian Journal of Basic Science & Research, 5(4), 145–151.
